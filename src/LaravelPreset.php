@@ -36,13 +36,13 @@ class LaravelPreset extends Preset
 
         $filesystem = new Filesystem();
         $filesystem->deleteDirectory(resource_path('sass'));
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
+        $filesystem->copyDirectory(__DIR__ . '/stubs/default', base_path());
     }
 
     public static function installAuth()
     {
         $filesystem = new Filesystem();
-        $filesystem->copyDirectory(__DIR__ . '/../stubs/auth', base_path());
+        $filesystem->copyDirectory(__DIR__ . '/stubs/auth', base_path());
     }
 
     protected static function updatePackageArray(array $packages)
