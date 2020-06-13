@@ -5,6 +5,20 @@
 @tailwind base;
 
 /*
+    Vue V-Cloak to Prevent Screen Refresh Issues
+ */
+[v-cloak] {
+  display: none !important;
+}
+
+/*
+    Remove Inner Shadow for iOS Devices
+ */
+input[type=text], input[type=email], input[type=password], textarea {
+  -webkit-appearance: none;
+}
+
+/*
  * This injects any component classes registered by plugins.
  */
 @tailwind components;
@@ -20,19 +34,6 @@
  * .form-input { ... }
  */
 
-/*
-    Vue V-Cloak to Prevent Screen Refresh Issues
- */
-[v-cloak] {
-  display: none !important;
-}
-
-/*
-    Remove Inner Shadow for iOS Devices
- */
-input[type=text], input[type=email], input[type=password], textarea {
-  -webkit-appearance: none;
-}
 
 /*
  * This injects all of Tailwinds utility classes, generated based on your config file.

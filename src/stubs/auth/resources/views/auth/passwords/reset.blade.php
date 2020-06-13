@@ -1,31 +1,31 @@
 @extends('layouts.auth')
 
+@section('title')
+    Sign in to your account
+@endsection
+
 @section('content')
-    <div class="pt-12 font-semibold text-gray-600 text-3xl text-center">
-        <span class="text-gray-500">coding</span>foundry
+    <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Logo" />
+        <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+            Sign in to your account
+        </h2>
+        <p class="mt-2 text-center text-sm leading-5 text-gray-600 max-w">
+            Or
+            <a href="{{ route('register') }}" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                start your 14-day free trial
+            </a>
+        </p>
     </div>
-    <form method="POST" action="{{ route('register') }}" class="bg-white shadow-xl rounded-lg p-6 mt-12 border-t-8 border-gray-600">
+
+    <form method="POST" action="{{ route('password.update') }}" class="bg-white shadow-xl rounded-lg p-6 mt-12 border-t-8 border-gray-600">
         @csrf
-
+        <input type="hidden" name="token" value="{{ $token }}">
         <div class="w-full">
-            <label for="name" class="">{{ __('Name') }}</label>
-
-            <div class="pt-2">
-                <input id="name" type="text" class="w-full p-2 rounded border bg-gray-200 focus:outline-none focus:border-gray-500 @error('name') bg-red-100 border-red-500 @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-
-                @error('name')
-                <span class="text-red-500 text-sm font-normal" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="pt-6 w-full">
             <label for="email" class="">{{ __('E-Mail Address') }}</label>
 
             <div class="pt-2">
-                <input id="email" type="email" class="w-full p-2 rounded border bg-gray-200 focus:outline-none focus:border-gray-500 @error('email') bg-red-100 border-red-500 @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                <input id="email" type="email" class="w-full p-2 rounded border bg-gray-200 focus:outline-none focus:border-gray-500 @error('email') bg-red-100 border-red-500 @enderror" name="email" value="{{ $email ?? old('email') }}" autocomplete="email" autofocus>
 
                 @error('email')
                 <span class="text-red-500 text-sm font-normal" role="alert">
@@ -65,7 +65,7 @@
 
         <div class="pt-6">
             <button type="submit" class="w-full bg-gray-600 hover:bg-gray-700 rounded text-white py-2 focus:outline-none focus:border-gray-500 border-2">
-                {{ __('Register') }}
+                {{ __('Reset Password') }}
             </button>
         </div>
     </form>

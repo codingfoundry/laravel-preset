@@ -35,6 +35,8 @@ class LaravelPresetServiceProvider extends ServiceProvider
                 $command->info('auth scaffolding installed successfully.');
             }
 
+            $command->exec('composer require laravel/telescope');
+
             $command->comment('Please run "npm install && npm run dev" to compile your new assets.');
         });
     }

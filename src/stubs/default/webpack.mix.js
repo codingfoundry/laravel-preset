@@ -7,7 +7,8 @@ mix.js('resources/js/app.js', 'public/js')
         processCssUrls: false,
         postCss: [ tailwindcss('./tailwind.config.js') ],
     })
-    .sourceMaps(true, 'eval-source-map');
+    .sourceMaps(true, 'eval-source-map')
+;
 
 if (mix.inProduction()) {
     mix.version();
