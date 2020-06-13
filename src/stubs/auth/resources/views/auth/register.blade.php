@@ -129,46 +129,46 @@
                     @enderror
                 </div>
 
-                <div class="mt-6">
-                    <div class="relative">
-                        <div class="absolute inset-0 flex items-center">
-                            <div class="w-full border-t border-gray-300"></div>
-                        </div>
-                        <div class="relative flex justify-center text-sm leading-5">
-                        <span class="px-2 bg-white text-gray-500">
-                          Profile
-                        </span>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="mt-6">--}}
+{{--                    <div class="relative">--}}
+{{--                        <div class="absolute inset-0 flex items-center">--}}
+{{--                            <div class="w-full border-t border-gray-300"></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="relative flex justify-center text-sm leading-5">--}}
+{{--                        <span class="px-2 bg-white text-gray-500">--}}
+{{--                          Profile--}}
+{{--                        </span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div >
-                    <label for="language_id" class="block text-sm font-medium leading-5 text-gray-700">{{ __('general.language') }}</label>
-                    <select aria-label="Language" name="language_id" class="mt-1 form-select relative block w-full rounded-none rounded-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
-                        @foreach(language_list() as $language)
-                            <option value="{{ $language['id'] }}">{{ $language['language'] }}</option>
-                        @endforeach
-                    </select>
-                    @error('language_id')
-                    <span class="text-red-800 font-light" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+{{--                <div >--}}
+{{--                    <label for="language_id" class="block text-sm font-medium leading-5 text-gray-700">{{ __('general.language') }}</label>--}}
+{{--                    <select aria-label="Language" name="language_id" class="mt-1 form-select relative block w-full rounded-none rounded-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">--}}
+{{--                        @foreach(language_list() as $language)--}}
+{{--                            <option value="{{ $language['id'] }}">{{ $language['language'] }}</option>--}}
+{{--                        @endforeach--}}
+{{--                    </select>--}}
+{{--                    @error('language_id')--}}
+{{--                    <span class="text-red-800 font-light" role="alert">--}}
+{{--                        <strong>{{ $message }}</strong>--}}
+{{--                    </span>--}}
+{{--                    @enderror--}}
+{{--                </div>--}}
 
-                <div class="mt-6">
-                    <label for="timezone" class="block text-sm font-medium leading-5 text-gray-700">{{ __('general.timezone') }}</label>
-                    <select aria-label="Timezone" name="timezone" class="mt-1 form-select relative block w-full rounded-none rounded-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
-                        @foreach (generate_timezone_list() as $tz => $desc)
-                            <option {{ $tz == get_local_timezone() ? 'selected' : '' }} value="{{ $tz }}">{{ $desc }}</option>
-                        @endforeach
-                    </select>
-                    @error('timezone')
-                    <span class="text-red-800 font-light" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+{{--                <div class="mt-6">--}}
+{{--                    <label for="timezone" class="block text-sm font-medium leading-5 text-gray-700">{{ __('general.timezone') }}</label>--}}
+{{--                    <select aria-label="Timezone" name="timezone" class="mt-1 form-select relative block w-full rounded-none rounded-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">--}}
+{{--                        @foreach (generate_timezone_list() as $tz => $desc)--}}
+{{--                            <option {{ $tz == get_local_timezone() ? 'selected' : '' }} value="{{ $tz }}">{{ $desc }}</option>--}}
+{{--                        @endforeach--}}
+{{--                    </select>--}}
+{{--                    @error('timezone')--}}
+{{--                    <span class="text-red-800 font-light" role="alert">--}}
+{{--                        <strong>{{ $message }}</strong>--}}
+{{--                    </span>--}}
+{{--                    @enderror--}}
+{{--                </div>--}}
 
                 {{--                <div class="mt-6">--}}
                 {{--                    <div class="relative">--}}
