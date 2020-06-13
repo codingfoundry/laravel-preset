@@ -2,11 +2,11 @@
 
 namespace CodingFoundry\LaravelPreset;
 
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
 use Laravel\Ui\Presets\Bootstrap;
 use Laravel\Ui\Presets\Vue;
+use Illuminate\Support\Facades\Artisan;
 
 class LaravelPresetServiceProvider extends ServiceProvider
 {
@@ -31,13 +31,14 @@ class LaravelPresetServiceProvider extends ServiceProvider
             Bootstrap::install();
             Vue::install();
             LaravelPreset::install();
+            Artisan::call('vendor:publish --tag=laravel-pagination');
 
             $command->info('Laravel Preset with Tailwind, Vue, SASS, Turbolinks scaffolding installed successfully.');
 
             if ($command->option('auth')) {
                 $command->call('ui:auth');
                 LaravelPreset::installAuth();
-                $command->info('auth scaffolding installed successfully.');
+                $command->info('Auth scaffolding installed successfully.');
             }
 
             $command->comment('Please run "npm install && npm run dev" to compile your new assets.');
