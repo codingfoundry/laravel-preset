@@ -35,6 +35,7 @@ class LaravelPresetServiceProvider extends ServiceProvider
             $command->info('Laravel Preset with Tailwind, Vue, SASS, Turbolinks scaffolding installed successfully.');
 
             if ($command->option('auth')) {
+                $command->call('ui:auth');
                 LaravelPreset::installAuth();
                 $command->info('auth scaffolding installed successfully.');
             }
